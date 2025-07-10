@@ -44,11 +44,11 @@ import newtonschoolLogo from './assets/company_logo/newtonschool_logo.png';
 import ietLogo from './assets/education_logo/IET_Logo.png';
 
 // Project Section Logo's
-import financeflowLogo from './assets/work_logo/finance_flow.png';
-import hostkindleLogo from './assets/work_logo/hostkindle.png';
-import chessGameLogo from './assets/work_logo/chess_game.png';
-import youtubeCloneLogo from './assets/work_logo/youtube_clone.png';
-import razorpayClone from './assets/work_logo/razorpay_clone.png';
+import financeflowLogo from './assets/work_logo/Finance_Flow.png';
+import hostkindleLogo from './assets/work_logo/HostKindle.png';
+import chessGameLogo from './assets/work_logo/Chess_Game.png';
+import youtubeCloneLogo from './assets/work_logo/Youtube_Clone.png';
+import razorpayClone from './assets/work_logo/Razorpay_Clone.png';
 import machineLearningLogo from './assets/work_logo/ML_Project.png';
 
 
