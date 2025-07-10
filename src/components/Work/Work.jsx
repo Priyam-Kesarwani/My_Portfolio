@@ -16,6 +16,7 @@ const Work = () => {
     <section
       id="work"
       className="py-24 pb-24 px-[12vw] md:px-[7vw] lg:px-[20vw] font-sans relative"
+      
     >
       {/* Section Title */}
       <div className="text-center mb-16">
@@ -67,7 +68,7 @@ const Work = () => {
       {/* Modal Container */}
       {selectedProject && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-90 p-4">
-          <div className="bg-gray-900 rounded-xl shadow-2xl lg:w-full w-[90%] max-w-3xl overflow-hidden relative">
+          <div className="bg-gray-900 rounded-xl shadow-2xl w-[90%] lg:w-[60vw] max-w-3xl overflow-hidden relative overflow-y-auto max-h-[90vh]">
             <div className="flex justify-end p-4">
               <button
                 onClick={handleCloseModal}
@@ -102,7 +103,7 @@ const Work = () => {
                     </span>
                   ))}
                 </div>
-                <div className="flex gap-4">
+                <div className="flex gap-4 justify-center">
                   <a
                     href={selectedProject.github}
                     target="_blank"
@@ -111,14 +112,14 @@ const Work = () => {
                   >
                     View Code
                   </a>
-                  <a
+                  {/* <a
                     href={selectedProject.webapp}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-1/2 bg-purple-600 hover:bg-purple-800 text-white lg:px-6 lg:py-2 px-2 py-1 rounded-xl lg:text-xl text-sm font-semibold text-center"
                   >
                     View Live
-                  </a>
+                  </a> */}
                 </div>
               </div>
             </div>
