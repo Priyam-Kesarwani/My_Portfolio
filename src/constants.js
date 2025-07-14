@@ -50,7 +50,7 @@ import chessGameLogo from './assets/work_logo/Chess_Game.png';
 import youtubeCloneLogo from './assets/work_logo/Youtube_Clone.png';
 import razorpayClone from './assets/work_logo/Razorpay_Clone.png';
 import machineLearningLogo from './assets/work_logo/ML_Project.png';
-
+import virtualRLogo from './assets/work_logo/VirtualR.png';
 
 export const SkillsInfo = [
   {
@@ -216,7 +216,7 @@ export const SkillsInfo = [
       image: chessGameLogo,
       tags: ["HTML", "CSS", "Javascript", "Node.js", "Express", "Socket.io", "Tailwind CSS", "Chess.js"],
       github: "https://github.com/Priyam-Kesarwani/Chess_Game",
-      webapp: "",
+      webapp: "https://chess-game-41r5.onrender.com",
     },
     {
       id: 3,
@@ -226,7 +226,7 @@ export const SkillsInfo = [
       image: youtubeCloneLogo,
       tags: ["JavaScript", "HTML", "CSS", "React JS", "Rapid API", "Tailwind CSS", "Axios", "React Icons", "React Router"],
       github: "https://github.com/Priyam-Kesarwani/Youtube_Clone",
-      webapp: "",
+      webapp: "https://youtube-clone-by-star.vercel.app/",
     },
     {
       id: 4,
@@ -236,16 +236,16 @@ export const SkillsInfo = [
       image: razorpayClone,
       tags: ["HTML", "CSS", "JavaScript", "Tailwind CSS"],
       github: "https://github.com/Priyam-Kesarwani/Razorpay_Clone",
-      webapp: "",
+      webapp: "https://razorpay-clone-by-star.vercel.app/",
     },
     {
       id: 5,
-      title: "Mobile Price Range Prediction",
+      title: "VirtualR",
       description:
-        "This project presents a machine learning classification model designed to predict the price range of mobile phones based on various specifications. It serves as a practical application of supervised learning techniques using Python.",
-      image: machineLearningLogo,
-      tags: ["Python", "Machine Learning", "Pandas", "NumPy", "Jupyter Notebook", ],
-      github: "https://github.com/Priyam-Kesarwani/Mobile-Price-Range-Prediction",
-      webapp: "",
+        "VirtualR is a responsive, modern front-end web application built with React and Tailwind CSS. It features smooth scrolling navigation, mobile-friendly menus, and clearly structured sections including Home, Features, Pricing, Contact, and Sign-In/Create Account flow.",
+      image: virtualRLogo,
+      tags: ["HTML", "CSS", "JavaScript", "React JS", "Tailwind CSS", "lucide-react", "React Scroll"],
+      github: "https://github.com/Priyam-Kesarwani/VirtualR",
+      webapp: "https://virtual-r-frontend-project.vercel.app/",
     },
   ];  
