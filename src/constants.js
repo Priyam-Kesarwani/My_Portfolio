@@ -49,7 +49,6 @@ import hostkindleLogo from "./assets/work_logo/HostKindle.png";
 import chessGameLogo from "./assets/work_logo/Chess_Game.png";
 import youtubeCloneLogo from "./assets/work_logo/Youtube_Clone.png";
 import razorpayClone from "./assets/work_logo/Razorpay_Clone.png";
-import machineLearningLogo from "./assets/work_logo/ML_Project.png";
 import virtualRLogo from "./assets/work_logo/VirtualR.png";
 
 export const SkillsInfo = [
@@ -189,6 +188,7 @@ export const projects = [
       "HTML",
       "CSS",
       "JavaScript",
+      "Tailwind CSS",
       "React JS",
       "Recharts",
       "Node.js",
