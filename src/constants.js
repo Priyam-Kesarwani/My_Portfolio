@@ -198,7 +198,7 @@ export const projects = [
       "Multer",
     ],
     github: "https://github.com/Priyam-Kesarwani/Finance-Flow",
-    webapp: "",
+    webapp: "https://finance-flow-by-star.vercel.app",
   },
   {
     id: 1,
@@ -217,7 +217,7 @@ export const projects = [
       "MongoDB",
     ],
     github: "https://github.com/Priyam-Kesarwani/HostKindle",
-    webapp: "https://hostkindle.onrender.com/",
+    webapp: "https://hostkindle.onrender.com",
   },
   {
     id: 2,
@@ -235,7 +235,7 @@ export const projects = [
       "React Scroll",
     ],
     github: "https://github.com/Priyam-Kesarwani/VirtualR",
-    webapp: "https://virtual-r-frontend-project.vercel.app/",
+    webapp: "https://virtual-r-frontend-project.vercel.app",
   },
   {
     id: 3,
@@ -274,7 +274,7 @@ export const projects = [
       "React Router",
     ],
     github: "https://github.com/Priyam-Kesarwani/Youtube_Clone",
-    webapp: "https://youtube-clone-by-star.vercel.app/",
+    webapp: "https://youtube-clone-by-star.vercel.app",
   },
   {
     id: 5,
@@ -284,6 +284,6 @@ export const projects = [
     image: razorpayClone,
     tags: ["HTML", "CSS", "JavaScript", "Tailwind CSS"],
     github: "https://github.com/Priyam-Kesarwani/Razorpay_Clone",
-    webapp: "https://razorpay-clone-by-star.vercel.app/",
+    webapp: "https://razorpay-clone-by-star.vercel.app",
   },
 ];
