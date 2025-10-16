@@ -1,22 +1,19 @@
 // Skills Section Logo's
 import htmlLogo from "./assets/tech_logo/html.png";
 import cssLogo from "./assets/tech_logo/css.png";
-import sassLogo from "./assets/tech_logo/sass.png";
+// removed unused: sassLogo
 import javascriptLogo from "./assets/tech_logo/javascript.png";
 import reactjsLogo from "./assets/tech_logo/reactjs.png";
-import angularLogo from "./assets/tech_logo/angular.png";
+// removed unused: angularLogo
 import reduxLogo from "./assets/tech_logo/redux.png";
 import nextjsLogo from "./assets/tech_logo/nextjs.png";
 import tailwindcssLogo from "./assets/tech_logo/tailwindcss.png";
-import gsapLogo from "./assets/tech_logo/gsap.png";
-import materialuiLogo from "./assets/tech_logo/materialui.png";
-import bootstrapLogo from "./assets/tech_logo/bootstrap.png";
-import springbootLogo from "./assets/tech_logo/springboot.png";
+// removed unused: gsapLogo, materialuiLogo, bootstrapLogo, springbootLogo
 import nodejsLogo from "./assets/tech_logo/nodejs.png";
 import expressjsLogo from "./assets/tech_logo/express.png";
 import mysqlLogo from "./assets/tech_logo/mysql.png";
 import mongodbLogo from "./assets/tech_logo/mongodb.png";
-import firebaseLogo from "./assets/tech_logo/firebase.png";
+// removed unused: firebaseLogo
 import cLogo from "./assets/tech_logo/c.png";
 import cppLogo from "./assets/tech_logo/cpp.png";
 import javaLogo from "./assets/tech_logo/java.png";
@@ -27,11 +24,9 @@ import githubLogo from "./assets/tech_logo/github.png";
 import vscodeLogo from "./assets/tech_logo/vscode.png";
 import postmanLogo from "./assets/tech_logo/postman.png";
 import mcLogo from "./assets/tech_logo/mc.png";
-import figmaLogo from "./assets/tech_logo/figma.png";
-import netlifyLogo from "./assets/tech_logo/netlify.png";
+// removed unused: figmaLogo, netlifyLogo
 import vercelLogo from "./assets/tech_logo/vercel.png";
-import postgreLogo from "./assets/tech_logo/postgre.png";
-import csharpLogo from "./assets/tech_logo/csharp.png";
+// removed unused: postgreLogo, csharpLogo
 import CodeChef from "./assets/tech_logo/codechef.png";
 import LeetCode from "./assets/tech_logo/leetcode.png";
 
@@ -50,6 +45,8 @@ import chessGameLogo from "./assets/work_logo/Chess_Game.png";
 import youtubeCloneLogo from "./assets/work_logo/Youtube_Clone.png";
 import razorpayClone from "./assets/work_logo/Razorpay_Clone.png";
 import virtualRLogo from "./assets/work_logo/VirtualR.png";
+import notesAppLogo from "./assets/work_logo/Notes_app.png";
+import visualProductLogo from "./assets/work_logo/Visual_Product.png";
 
 export const SkillsInfo = [
   {
@@ -88,9 +85,9 @@ export const SkillsInfo = [
       { name: "C++", logo: cppLogo },
       { name: "Java", logo: javaLogo },
       { name: "Python", logo: pythonLogo },
-      // { name: 'C-Sharp', logo: csharpLogo },
       { name: "JavaScript", logo: javascriptLogo },
-      // { name: 'TypeScript', logo: typescriptLogo },
+      { name: "TypeScript", logo: typescriptLogo },
+      // { name: 'C-Sharp', logo: csharpLogo },
     ],
   },
   {
@@ -113,6 +110,19 @@ export const SkillsInfo = [
 
       { name: "LeetCode", logo: LeetCode },
     ],
+  },
+];
+
+export const codingProfiles = [
+  {
+    name: "CodeChef",
+    url: "https://www.codechef.com/users/priyamstar",
+    logo: CodeChef,
+  },
+  {
+    name: "LeetCode",
+    url: "https://leetcode.com/u/Priyam_Kesarwani/",
+    logo: LeetCode,
   },
 ];
 
@@ -170,9 +180,9 @@ export const education = [
     id: 0,
     img: ietLogo,
     school: "Institute of Engineering and Technology, Lucknow",
-    date: "Oct 2022 - July 2026",
+    date: "Oct 2022 - Present",
     grade: "8 CGPA",
-    desc: "I have completed my Bachelor's degree (B.tech) in Computer Science from IET Lucknow. During my time at IET, I gained a strong foundation in programming, software development, and computer science principles. I have studied courses such as Data Structures, Algorithms, Object-Oriented Programming, Database Management Systems, Web Development, and Software Engineering. I actively participated in various workshops and technical events, which enhanced my skills and knowledge. My experience at IET Lucknow has been instrumental in shaping my technical abilities and professional growth.",
+    desc: "Currently pursuing a Bachelor's degree (B.Tech) in Computer Science at IET Lucknow. Building a strong foundation in programming, software development, and computer science principles, including Data Structures, Algorithms, OOP, DBMS, Web Development, and Software Engineering. Actively participating in workshops and technical events to enhance practical skills. Expected graduation: 2026.",
     degree: "Bachelor of Technology - B.Tech (Computer Science)",
   },
 ];
@@ -180,6 +190,25 @@ export const education = [
 export const projects = [
   {
     id: 0,
+    title: "HostKindle",
+    description:
+      "HostKindle is a full-stack web application that enables users to either host their property or book a stay as a guest. Built on the MVC architecture for clean and scalable design, it delivers a seamless experience for both parties.",
+    image: hostkindleLogo,
+    tags: [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Tailwind CSS",
+      "React JS",
+      "Node.js",
+      "Express",
+      "MongoDB",
+    ],
+    github: "https://github.com/Priyam-Kesarwani/HostKindle",
+    webapp: "https://hostkindle.onrender.com",
+  },
+  {
+    id: 1,
     title: "Finance Flow",
     description:
       "Finance-Flow is a full-stack financial management web application built using React and Node.js. It enables users to track income and expenses, visualize financial trends, and gain insights into personal financial habits. User login and authorization features added for secure access.",
@@ -201,26 +230,24 @@ export const projects = [
     webapp: "https://finance-flow-by-star.vercel.app",
   },
   {
-    id: 1,
-    title: "HostKindle",
+    id: 2,
+    title: "Visual Product Matcher",
     description:
-      "HostKindle is a full-stack web application that enables users to either host their property or book a stay as a guest. Built on the MVC architecture for clean and scalable design, it delivers a seamless experience for both parties.",
-    image: hostkindleLogo,
+      "An application that matches product images visually using feature extraction and similarity search, enabling quick discovery of similar products.",
+    image: visualProductLogo,
     tags: [
-      "HTML",
-      "CSS",
       "JavaScript",
-      "Tailwind CSS",
       "React JS",
+      "Tailwind CSS",
       "Node.js",
       "Express",
       "MongoDB",
     ],
-    github: "https://github.com/Priyam-Kesarwani/HostKindle",
-    webapp: "https://hostkindle.onrender.com",
+    github: "https://github.com/Priyam-Kesarwani/Visual-Product-Matcher",
+    webapp: "https://visual-product-matcher-frontend-theta.vercel.app",
   },
   {
-    id: 2,
+    id: 3,
     title: "VirtualR",
     description:
       "VirtualR is a responsive, modern front-end web application built with React and Tailwind CSS. It features smooth scrolling navigation, mobile-friendly menus, and clearly structured sections including Home, Features, Pricing, Contact, and Sign-In/Create Account flow.",
@@ -238,7 +265,7 @@ export const projects = [
     webapp: "https://virtual-r-frontend-project.vercel.app",
   },
   {
-    id: 3,
+    id: 4,
     title: "Chess Game",
     description:
       "This is a full-stack Chess Game built with Node.js, Express, Socket.io, and styled using Tailwind CSS. It allows two players to play chess in real time via web sockets. The game includes essential features like Undo, Reset, and full chess logic validation using chess.js.",
@@ -257,7 +284,25 @@ export const projects = [
     webapp: "https://chess-game-41r5.onrender.com",
   },
   {
-    id: 4,
+    id: 5,
+    title: "Note Taking Application",
+    description:
+      "A full-stack notes application with authentication, CRUD notes, search, and responsive UI. Built to be fast, simple, and reliable for everyday note-taking.",
+    image: notesAppLogo,
+    tags: [
+      "TypeScript",
+      "React JS",
+      "Tailwind CSS",
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "JWT",
+    ],
+    github: "https://github.com/Priyam-Kesarwani/Note-Taking-Application",
+    webapp: "https://note-taking-application-three.vercel.app",
+  },
+  {
+    id: 6,
     title: "Youtube Clone",
     description:
       "A full-stack YouTube clone project build using React.js and Rapid API replicating core features of YouTube like video browsing, playback, and search. Built to explore modern web development tools and best practices.",
@@ -277,7 +322,7 @@ export const projects = [
     webapp: "https://youtube-clone-by-star.vercel.app",
   },
   {
-    id: 5,
+    id: 7,
     title: "Razorpay Clone",
     description:
       "A responsive frontend clone of Razorpay's landing page, built using Tailwind CSS v4. This project replicates the design and layout of Razorpay's official homepage, focusing on modern UI elements and responsive design.",

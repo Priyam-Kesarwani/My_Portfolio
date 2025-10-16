@@ -46,12 +46,12 @@ const About = () => {
             back-end development, I specialize in the MERN stack and other
             modern technologies to create seamless user experiences and
             efficient solutions to complex problems and I am also Expert in
-            Competitive Programming with 4 star rating on CodeChef.
+            Competitive Programming with 4 star rating on CodeChef and solved 1000+ DSA based questions on various coding platforms.
           </p>
 
           {/* Download Resume Button */}
           <a
-            href="https://drive.google.com/file/d/130Gtvku-qiU_ptRcqb4mEWJXjmtuwL1X/view?usp=drivesdkg"
+            href="https://drive.google.com/file/d/1-Mf8TPEfxSE5_2icKqci6DjSM21fWer6/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block text-white px-8 py-3 text-lg font-bold transition duration-300 transform-hover:scale-105 rounded-full"

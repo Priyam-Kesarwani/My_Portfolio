@@ -6,8 +6,7 @@ import Tilt from "react-parallax-tilt";
 const Skills = () => (
   <section
     id="skills"
-    className="py-24 pb-24 px-[12vw] md:px-[7vw] lg:px-[14vw] font-sans backgroundImage" 
-    style={{ clipPath: "polygon(0 0, 100% 0, 100% 98%, 75% 95%, 0 100%)" }}
+    className="py-24 pb-24 px-[12vw] md:px-[7vw] lg:px-[14vw] font-sans"
   >
     {/* Section Title */}
     <div className="text-center mb-8">
