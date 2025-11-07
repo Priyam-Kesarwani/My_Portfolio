@@ -41,12 +41,7 @@ const About = () => {
             </span>
           </h3>
           <p className="text-base sm:text-lg md:text-lg text-gray-400 mb-10 mt-8 leading-relaxed">
-            I am a full-stack developer with over 2 years of experience in
-            building scalable web applications. Skilled in both front-end and
-            back-end development, I specialize in the MERN stack and other
-            modern technologies to create seamless user experiences and
-            efficient solutions to complex problems and I am also Expert in
-            Competitive Programming with 4 star rating on CodeChef and solved 1000+ DSA based questions on various coding platforms.
+           I am a full-stack developer with over 2 years of experience in building scalable and high-performance web applications. Skilled in both front-end and back-end development, I specialize in the MERN stack and other modern technologies to deliver seamless user experiences and effective solutions to complex problems. I am also an expert in Competitive Programming, holding a 4-star rating on CodeChef, a Knight badge on LeetCode, and having solved 1000+ DSA-based problems across multiple coding platforms.
           </p>
 
           {/* Download Resume Button */}
