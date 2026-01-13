@@ -5,6 +5,7 @@ const CodingProfiles = () => (
   <section
     id="coding-profiles"
     className="py-24 pb-24 px-[12vw] md:px-[7vw] lg:px-[14vw] font-sans"
+    style={{ clipPath: "polygon(0 0, 100% 0, 100% 98%, 75% 95%, 0 100%)" }}
   >
     <div className="text-center mb-8">
       <h2 className="text-3xl sm:text-4xl font-bold text-white">CODING PROFILES</h2>

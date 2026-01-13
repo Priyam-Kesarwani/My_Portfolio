@@ -50,6 +50,7 @@ const Contact = () => {
     <section
       id="contact"
       className="flex flex-col items-center justify-center py-24 px-[12vw] md:px-[7vw] lg:px-[20vw]"
+      style={{ clipPath: "polygon(0 0, 100% 0, 100% 98%, 75% 95%, 0 100%)" }}
     >
       {/* Toast Container */}
       <ToastContainer />

@@ -47,7 +47,7 @@ import razorpayClone from "./assets/work_logo/Razorpay_Clone.png";
 import virtualRLogo from "./assets/work_logo/VirtualR.png";
 import notesAppLogo from "./assets/work_logo/Notes_app.png";
 import visualProductLogo from "./assets/work_logo/Visual_Product.png";
-
+import nextwatchLogo from "./assets/work_logo/NextWatch.png";
 export const SkillsInfo = [
   {
     title: "Frontend",
@@ -192,7 +192,7 @@ export const projects = [
     id: 0,
     title: "HostKindle",
     description:
-      "HostKindle is a full-stack web application that enables users to either host their property or book a stay as a guest. Built on the MVC architecture for clean and scalable design, it delivers a seamless experience for both parties.",
+      "HostKindle is a full-stack property hosting platform built with Node.js, Express.js, MongoDB, and EJS. It enables users to list, manage, and book properties with dedicated Guest and Host roles, offering a seamless, AI-enhanced hosting experience.",
     image: hostkindleLogo,
     tags: [
       "HTML",
@@ -211,7 +211,7 @@ export const projects = [
     id: 1,
     title: "Finance Flow",
     description:
-      "Finance-Flow is a full-stack financial management web application built using React and Node.js. It enables users to track income and expenses, visualize financial trends, and gain insights into personal financial habits. User login and authorization features added for secure access.",
+      "Finance-Flow is an AI-powered expense tracking web application built using the MERN Stack. It helps users manage income and expenses, visualize financial data, and receive smart AI-driven financial insights.",
     image: financeflowLogo,
     tags: [
       "HTML",
@@ -231,6 +231,27 @@ export const projects = [
   },
   {
     id: 2,
+    title: "NextWatch",
+    description:
+      "NextWatch is an AI-powered movie recommendation platform featuring 500+ movies across 20+ categories. It allows users to search, sort, filter, watch trailers, and manage personalized watchlists with smart recommendations.",
+    image: nextwatchLogo,
+    tags: [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Tailwind CSS",
+      "React JS",
+      "Golang",
+      "Gin",
+      "MongoDB",
+      "Rapid API",
+      "AI Integration",
+    ],
+    github: "https://github.com/Priyam-Kesarwani/NextWatch",
+    webapp: "https://next-watch-ivory.vercel.app",
+  },  
+  {
+    id: 3,
     title: "Visual Product Matcher",
     description:
       "An application that matches product images visually using feature extraction and similarity search, enabling quick discovery of similar products.",
@@ -247,7 +268,7 @@ export const projects = [
     webapp: "https://visual-product-matcher-frontend-theta.vercel.app",
   },
   {
-    id: 3,
+    id: 4,
     title: "VirtualR",
     description:
       "VirtualR is a responsive, modern front-end web application built with React and Tailwind CSS. It features smooth scrolling navigation, mobile-friendly menus, and clearly structured sections including Home, Features, Pricing, Contact, and Sign-In/Create Account flow.",
@@ -265,7 +286,7 @@ export const projects = [
     webapp: "https://virtual-r-frontend-project.vercel.app",
   },
   {
-    id: 4,
+      id: 5,
     title: "Chess Game",
     description:
       "This is a full-stack Chess Game built with Node.js, Express, Socket.io, and styled using Tailwind CSS. It allows two players to play chess in real time via web sockets. The game includes essential features like Undo, Reset, and full chess logic validation using chess.js.",
@@ -284,7 +305,7 @@ export const projects = [
     webapp: "https://chess-game-41r5.onrender.com",
   },
   {
-    id: 5,
+    id: 6,
     title: "Note Taking Application",
     description:
       "A full-stack notes application with authentication, CRUD notes, search, and responsive UI. Built to be fast, simple, and reliable for everyday note-taking.",
@@ -302,7 +323,7 @@ export const projects = [
     webapp: "https://note-taking-application-three.vercel.app",
   },
   {
-    id: 6,
+    id: 7,
     title: "Youtube Clone",
     description:
       "A full-stack YouTube clone project build using React.js and Rapid API replicating core features of YouTube like video browsing, playback, and search. Built to explore modern web development tools and best practices.",
@@ -322,7 +343,7 @@ export const projects = [
     webapp: "https://youtube-clone-by-star.vercel.app",
   },
   {
-    id: 7,
+    id: 8,
     title: "Razorpay Clone",
     description:
       "A responsive frontend clone of Razorpay's landing page, built using Tailwind CSS v4. This project replicates the design and layout of Razorpay's official homepage, focusing on modern UI elements and responsive design.",
