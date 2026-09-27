@@ -28,9 +28,9 @@ const About = () => {
             <span className="text-[#8245ec]">
               <Typewriter
                 words={[
+                  "Software Engineer",
                   "MERN Stack Developer",
                   "Competitive Programmer",
-                  "Expert in Coding",
                 ]}
                 loop={true}
                 cursor
@@ -42,7 +42,7 @@ const About = () => {
             </span>
           </h3>
           <p className="text-base sm:text-lg md:text-lg text-gray-400 mb-10 mt-8 leading-relaxed">
-           I am a full-stack developer with over 2 years of experience in building scalable and high-performance web applications. Skilled in both front-end and back-end development, I specialize in the MERN stack and other modern technologies to deliver seamless user experiences and effective solutions to complex problems. I am also an expert in Competitive Programming, holding a 4-star rating on CodeChef, a Knight badge on LeetCode, and having solved 1000+ DSA-based problems across multiple coding platforms.
+           Full-stack developer and Software Engineer at HuemanAI with hands-on experience architecting scalable multi-tenant SaaS platforms (Next.js, NestJS, PostgreSQL) and building high-performance web applications using the MERN stack. Expert in competitive programming with a LeetCode Knight badge (max rating 1850+, top 5.67% globally), a 4-star rating on CodeChef (max rating 1880), and over 1,100 DSA problems solved across platforms. A Computer Science graduate from IET Lucknow passionate about writing efficient code and delivering seamless user experiences.
           </p>
 
           {/* Download Resume Button */}
