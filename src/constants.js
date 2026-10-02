@@ -167,7 +167,7 @@ export const education = [
     img: ietLogo,
     school: "Institute of Engineering and Technology, Lucknow",
     date: "Nov 2022 - June 2026",
-    grade: "8 CGPA",
+    grade: "8.1 CGPA",
     desc: "Currently pursuing a Bachelor's degree (B.Tech) in Computer Science at IET Lucknow. Building a strong foundation in programming, software development, and computer science principles, including Data Structures, Algorithms, OOP, DBMS, Web Development, and Software Engineering. Actively participating in workshops and technical events to enhance practical skills. Expected graduation: 2026.",
     degree: "Bachelor of Technology - B.Tech (Computer Science)",
   },
