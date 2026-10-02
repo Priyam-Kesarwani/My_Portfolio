@@ -24,7 +24,7 @@ const Education = () => {
 
       {isSingle ? (
         /* Spotlight Card for Single Education */
-        <div className="max-w-3xl mx-auto">
+        <div className="max-w-4xl mx-auto">
           {education.map((edu) => (
             <Tilt
               key={edu.id}
@@ -39,27 +39,27 @@ const Education = () => {
               <div className="w-full p-6 sm:p-8 rounded-2xl border border-gray-700/60 bg-gradient-to-b from-gray-900/90 to-[#0a0820]/90 backdrop-blur-md shadow-[0_0_25px_rgba(130,69,236,0.22)] hover:border-[#8245ec]/80 hover:shadow-[0_0_35px_rgba(130,69,236,0.4)] transition-all duration-300">
                 {/* Header with School Logo, Degree, School & Date */}
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-gray-800">
-                  <div className="flex items-center space-x-4">
-                    <div className="w-14 h-14 bg-white/10 border border-white/20 rounded-xl p-2 flex items-center justify-center shrink-0 overflow-hidden shadow-inner">
+                  <div className="flex items-center space-x-4 sm:space-x-5 min-w-0">
+                    <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white/10 border border-white/20 rounded-2xl p-2 sm:p-2.5 flex items-center justify-center shrink-0 overflow-hidden shadow-inner">
                       <img
                         src={edu.img}
                         alt={edu.school}
-                        className="max-w-full max-h-full object-contain rounded-lg"
+                        className="w-full h-full object-contain"
                       />
                     </div>
 
-                    <div>
-                      <h3 className="text-xl sm:text-2xl font-bold text-white">
+                    <div className="min-w-0">
+                      <h3 className="text-xl sm:text-2xl font-bold text-white leading-tight">
                         {edu.degree}
                       </h3>
-                      <h4 className="text-sm sm:text-base font-semibold text-purple-300">
+                      <h4 className="text-sm sm:text-base font-semibold text-purple-300 mt-1">
                         {edu.school}
                       </h4>
                     </div>
                   </div>
 
-                  <div className="self-start sm:self-center flex flex-wrap gap-2">
-                    <span className="inline-block bg-purple-900/40 text-purple-300 border border-purple-600/40 px-3.5 py-1 rounded-full text-xs sm:text-sm font-medium">
+                  <div className="shrink-0 self-start sm:self-center">
+                    <span className="inline-block bg-purple-900/40 text-purple-300 border border-purple-600/40 px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold whitespace-nowrap shadow-sm">
                       {edu.date}
                     </span>
                   </div>

@@ -120,17 +120,45 @@ export const codingProfiles = [
     name: "CodeChef",
     url: "https://www.codechef.com/users/priyamstar",
     logo: CodeChef,
+    badge: "4 Star",
   },
   {
     name: "LeetCode",
     url: "https://leetcode.com/u/Priyam_Kesarwani/",
     logo: LeetCode,
+    badge: "Knight Badge",
   },
   {
     name: "Codeforces",
     url: "https://codeforces.com/profile/Priyam-Kesarwani",
     logo: Codeforces,
+    badge: "400+ Problems Solved",
   },
+];
+
+export const dsaTopics = [
+  "Array",
+  "String",
+  "Hash Table / Hashing",
+  "Math & Number Theory",
+  "Greedy",
+  "Sorting",
+  "Tree & Binary Tree",
+  "Depth-First Search (DFS) & Breadth-First Search (BFS)",
+  "Two Pointers",
+  "Binary Search",
+  "Dynamic Programming (DP)",
+  "Matrix",
+  "Stack & Monotonic Stack",
+  "Linked List",
+  "Implementation & Constructive Algorithms",
+  "Brute Force & Simulation",
+  "Bitmasks & Combinatorics",
+  "Graphs, DSU / Union-Find, & Shortest Paths",
+  "Trie",
+  "Divide and Conquer",
+  "Game Theory",
+  "Data Stream",
 ];
 
 export const experiences = [
@@ -168,7 +196,7 @@ export const education = [
     school: "Institute of Engineering and Technology, Lucknow",
     date: "Nov 2022 - June 2026",
     grade: "8.1 CGPA",
-    desc: "Currently pursuing a Bachelor's degree (B.Tech) in Computer Science at IET Lucknow. Building a strong foundation in programming, software development, and computer science principles, including Data Structures, Algorithms, OOP, DBMS, Web Development, and Software Engineering. Actively participating in workshops and technical events to enhance practical skills. Expected graduation: 2026.",
+    desc: "Computer Science Engineering graduate from IET Lucknow with a robust foundation in software development, core computer science principles, and problem-solving. Skilled in building scalable web applications and proficient in Data Structures, Algorithms, OOP, DBMS, and modern software engineering stacks. Eager to leverage strong technical capabilities and competitive programming experience in a professional software engineering role.",
     degree: "Bachelor of Technology - B.Tech (Computer Science)",
   },
 ];

@@ -29,13 +29,15 @@ const handleMenuClick = (sectionId) => {
     { id: "about", label: "About" },
     { id: "experience", label: "Experience" },
     { id: "skills", label: "Skills" },
+    { id: "coding-profiles", label: "Coding" },
     { id: "work", label: "Projects" },
     { id: "education", label: "Education" },
+    { id: "contact", label: "Contact" },
   ];
 
   return (
     <nav
-      className={`fixed top-0 w-full z-50 transition duration-300 px-[7vw] lg:px-[20vw] ${
+      className={`fixed top-0 w-full z-50 transition duration-300 px-[4vw] md:px-[6vw] lg:px-[8vw] xl:px-[12vw] ${
         isScrolled
           ? "bg-[#050414] bg-opacity-50 backdrop-blur-md shadow-md"
           : "bg-transparent"
@@ -51,7 +53,7 @@ const handleMenuClick = (sectionId) => {
         </div>
 
         {/* Desktop Menu */}
-        <ul className="text-gray-300 md:flex space-x-8 hidden">
+        <ul className="text-gray-300 md:flex space-x-5 lg:space-x-7 xl:space-x-8 hidden text-sm lg:text-base font-medium">
           {menuItems.map((item) => (
             <li
               key={item.id}
