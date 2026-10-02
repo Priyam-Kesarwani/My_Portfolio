@@ -1,147 +1,164 @@
 import React from "react";
-import { education } from "../../constants"; // Import the education data
+import { education } from "../../constants";
+import Tilt from "react-parallax-tilt";
 
 const Education = () => {
+  const isSingle = education.length === 1;
+
   return (
     <section
       id="education"
-      className="py-24 pb-24 px-[12vw] md:px-[7vw] lg:px-[16vw] font-sans backgroundImage"
-      style={{ clipPath: "polygon(0 0, 100% 0, 100% 98%, 75% 95%, 0 100%)" }}
+      className="w-full bg-section-nebula relative z-[2] -mt-16 clip-polygon-left pt-24 pb-28 sm:pb-32 font-sans scroll-mt-24"
     >
-
+      <div className="max-w-7xl mx-auto px-6 sm:px-10 md:px-12 lg:px-16">
       {/* Section Title */}
-      <div className="text-center mb-16">
-        <h2 className="text-4xl font-bold text-white">EDUCATION</h2>
-        <div className="w-32 h-1 bg-purple-500 mx-auto mt-4"></div>
-        <p className="text-gray-400 mt-4 text-lg font-semibold">
-          My education has been a journey of learning and development. Here are
-          the details of my academic background
+      <div className="text-center mb-12 sm:mb-16">
+        <h2 className="text-3xl sm:text-4xl font-bold text-white tracking-wider">
+          EDUCATION
+        </h2>
+        <div className="w-24 h-1 bg-[#8245ec] mx-auto mt-2 rounded-full"></div>
+        <p className="text-gray-400 mt-4 text-base sm:text-lg font-medium max-w-2xl mx-auto">
+          My education has been a journey of learning and development. Here are the details of my academic background
         </p>
       </div>
 
-      {/* Education Timeline */}
-      <div className="relative">
+      {isSingle ? (
+        /* Spotlight Card for Single Education */
+        <div className="max-w-3xl mx-auto">
+          {education.map((edu) => (
+            <Tilt
+              key={edu.id}
+              tiltMaxAngleX={6}
+              tiltMaxAngleY={6}
+              perspective={1200}
+              scale={1.01}
+              transitionSpeed={800}
+              gyroscope={true}
+              className="w-full"
+            >
+              <div className="w-full p-6 sm:p-8 rounded-2xl border border-gray-700/60 bg-gradient-to-b from-gray-900/90 to-[#0a0820]/90 backdrop-blur-md shadow-[0_0_25px_rgba(130,69,236,0.22)] hover:border-[#8245ec]/80 hover:shadow-[0_0_35px_rgba(130,69,236,0.4)] transition-all duration-300">
+                {/* Header with School Logo, Degree, School & Date */}
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-gray-800">
+                  <div className="flex items-center space-x-4">
+                    <div className="w-14 h-14 bg-white/10 border border-white/20 rounded-xl p-2 flex items-center justify-center shrink-0 overflow-hidden shadow-inner">
+                      <img
+                        src={edu.img}
+                        alt={edu.school}
+                        className="max-w-full max-h-full object-contain rounded-lg"
+                      />
+                    </div>
 
-        {/* Vertical line */}
-        <div className="absolute sm:left-1/2 left-0 transform -translate-x-1/2 sm:-translate-x-0 w-1 bg-white h-full"></div>
+                    <div>
+                      <h3 className="text-xl sm:text-2xl font-bold text-white">
+                        {edu.degree}
+                      </h3>
+                      <h4 className="text-sm sm:text-base font-semibold text-purple-300">
+                        {edu.school}
+                      </h4>
+                    </div>
+                  </div>
 
-        {/* Timeline Circle for mobile */}
-        <div className="absolute -left-6 top-0 sm:hidden z-20">
-          <div className="bg-gray-400 border-4 border-[#8245ec] w-12 h-12 rounded-full flex justify-center items-center">
-            <img
-              src={education[0]?.img}
-              alt={education[0]?.school}
-              className="w-full h-full object-cover rounded-full"
-            />
+                  <div className="self-start sm:self-center flex flex-wrap gap-2">
+                    <span className="inline-block bg-purple-900/40 text-purple-300 border border-purple-600/40 px-3.5 py-1 rounded-full text-xs sm:text-sm font-medium">
+                      {edu.date}
+                    </span>
+                  </div>
+                </div>
+
+                {/* Grade Badge */}
+                {edu.grade && (
+                  <div className="mt-4 flex items-center gap-2">
+                    <span className="text-xs font-semibold uppercase tracking-wider text-gray-400">
+                      Performance:
+                    </span>
+                    <span className="bg-[#8245ec]/20 text-purple-200 border border-[#8245ec]/40 px-3 py-0.5 rounded-full text-xs font-bold">
+                      Grade: {edu.grade}
+                    </span>
+                  </div>
+                )}
+
+                {/* Description */}
+                <p className="mt-4 text-gray-300 text-sm sm:text-base leading-relaxed">
+                  {edu.desc}
+                </p>
+              </div>
+            </Tilt>
+          ))}
+        </div>
+      ) : (
+        /* Multi-education timeline fallback */
+        <div className="relative">
+          <div className="absolute left-6 sm:left-1/2 transform -translate-x-1/2 w-0.5 bg-gradient-to-b from-[#8245ec] via-purple-500/60 to-transparent h-full"></div>
+          <div className="space-y-12 sm:space-y-16">
+            {education.map((edu, index) => {
+              const isEven = index % 2 === 0;
+
+              return (
+                <div
+                  key={edu.id}
+                  className="relative flex flex-col sm:flex-row items-start sm:items-center w-full"
+                >
+                  <div className="absolute left-6 sm:left-1/2 transform -translate-x-1/2 bg-gray-900 border-2 sm:border-4 border-[#8245ec] w-11 h-11 sm:w-14 sm:h-14 rounded-full flex justify-center items-center z-10 shadow-[0_0_15px_rgba(130,69,236,0.6)] p-1.5 sm:p-2">
+                    <img
+                      src={edu.img}
+                      alt={edu.school}
+                      className="w-full h-full object-contain rounded-full"
+                    />
+                  </div>
+
+                  <div
+                    className={`w-full sm:w-[calc(50%-2.5rem)] ml-14 sm:ml-0 ${
+                      isEven ? "sm:mr-auto sm:pr-2" : "sm:ml-auto sm:pl-2"
+                    }`}
+                  >
+                    <Tilt
+                      tiltMaxAngleX={8}
+                      tiltMaxAngleY={8}
+                      perspective={1200}
+                      scale={1.01}
+                      transitionSpeed={800}
+                      gyroscope={true}
+                      className="w-full"
+                    >
+                      <div className="w-full p-6 sm:p-7 rounded-2xl border border-gray-700/60 bg-gradient-to-b from-gray-900/90 to-[#0a0820]/90 backdrop-blur-md shadow-[0_0_20px_rgba(130,69,236,0.18)] hover:border-[#8245ec]/80 hover:shadow-[0_0_30px_rgba(130,69,236,0.35)] transition-all duration-300">
+                        <div className="flex items-center space-x-4">
+                          <div className="w-12 h-12 sm:w-14 sm:h-14 bg-white/10 border border-white/20 rounded-xl p-2 flex items-center justify-center shrink-0 overflow-hidden">
+                            <img
+                              src={edu.img}
+                              alt={edu.school}
+                              className="max-w-full max-h-full object-contain"
+                            />
+                          </div>
+                          <div>
+                            <h3 className="text-lg sm:text-xl font-bold text-white">
+                              {edu.degree}
+                            </h3>
+                            <h4 className="text-sm font-medium text-purple-300">
+                              {edu.school}
+                            </h4>
+                            <p className="text-xs text-gray-400 mt-0.5">
+                              {edu.date}
+                            </p>
+                          </div>
+                        </div>
+
+                        {edu.grade && (
+                          <p className="mt-3 text-xs font-semibold text-purple-300">
+                            Grade: {edu.grade}
+                          </p>
+                        )}
+                        <p className="mt-3 text-gray-300 text-xs sm:text-sm leading-relaxed">
+                          {edu.desc}
+                        </p>
+                      </div>
+                    </Tilt>
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
-
-        {/* Education Entries */}
-        {education.map((edu, index) => (
-          <div
-            key={edu.id}
-            className="relative flex flex-col sm:flex-row items-center mb-16"
-          >
-            {/* Left side: content for even, empty for odd */}
-            {index % 2 === 0 ? (
-              <>
-                <div className="w-full sm:w-1/2 sm:pr-8 flex justify-end">
-                  {/* Content */}
-                  <div className="p-4 sm:p-8 rounded-2xl shadow-2xl border border-white bg-gray-900 backdrop-blur-md w-full max-w-xl">
-                    {/* ...content as before... */}
-                    <div className="flex items-center space-x-6">
-                      <div className="w-16 h-16 bg-white rounded-full overflow-hidden flex items-center justify-center shrink-0">
-                        <img
-                          src={edu.img}
-                          alt={edu.school}
-                          className="w-full h-full object-cover rounnded-full"
-                        />
-                      </div>
-                      <div className="flex flex-col justify-between">
-                        <div>
-                          <h3 className="text-xl sm:text-xl font-semibold text-white">
-                            {edu.degree}
-                          </h3>
-                          <h4 className="text-md sm:text-sm text-gray-300">
-                            {edu.school}
-                          </h4>
-                        </div>
-                        <p className="text-sm text-gray-500 mt-2">{edu.date}</p>
-                      </div>
-                    </div>
-                    <p className="mt-4 text-gray-400 font-bold">
-                      Grade: {edu.grade}
-                    </p>
-                    <p className="mt-4 text-gray-400">{edu.desc}</p>
-                  </div>
-                </div>
-
-                {/* Timeline Circle for desktop only */}
-                <div className="z-10 flex-shrink-0 hidden flex-col items-center sm:w-0 sm:px-0 sm:flex">
-                  <div className="mx-auto bg-gray-400 border-4 border-[#8245ec] w-12 h-12 sm:w-16 sm:h-16 rounded-full flex justify-center items-center">
-                    <img
-                      src={edu.img}
-                      alt={edu.school}
-                      className="w-full h-full object-cover rounded-full"
-                    />
-                  </div>
-                </div>
-                {/* Empty right side for spacing */}
-                <div className="hidden sm:block w-1/2"></div>
-              </>
-            ) : (
-              <>
-                {/* Empty left side for spacing */}
-                <div className="hidden sm:block w-1/2"></div>
-
-                {/* Timeline Circle */}
-                <div className="z-10 flex-shrink-0 flex flex-col items-center sm:w-0 sm:px-0">
-                  <div className="mx-auto bg-gray-400 border-4 border-[#8245ec] w-12 h-12 sm:w-16 sm:h-16 rounded-full flex justify-center items-center">
-                    <img
-                      src={edu.img}
-                      alt={edu.school}
-                      className="w-full h-full object-cover rounded-full"
-                    />
-                  </div>
-                </div>
-
-
-                {/* Content on right for odd index */}
-                <div className="w-full sm:w-1/2 sm:pl-8 flex justify-start">
-                  {/* Content */}
-                  <div className="p-4 sm:p-8 rounded-2xl shadow-2xl border border-white bg-gray-900 backdrop-blur-md w-full max-w-xl">
-                    {/* ...content as before... */}
-                    <div className="flex items-center space-x-6">
-                      <div className="w-16 h-16 bg-white rounded-full overflow-hidden flex items-center justify-center">
-                        <img
-                          src={edu.img}
-                          alt={edu.school}
-                          className="w-full h-full object-cover rounded-full"
-                        />
-                      </div>
-                      <div className="flex flex-col justify-between">
-                        <div>
-                          <h3 className="text-xl sm:text-xl font-semibold text-white">
-                            {edu.degree}
-                          </h3>
-                          <h4 className="text-md sm:text-sm text-gray-300">
-                            {edu.school}
-                          </h4>
-                        </div>
-                        <p className="text-sm text-gray-500 mt-2">{edu.date}</p>
-                      </div>
-                    </div>
-                    <p className="mt-4 text-gray-400 font-bold">
-                      Grade: {edu.grade}
-                    </p>
-                    <p className="mt-4 text-gray-400">{edu.desc}</p>
-                  </div>
-                </div>
-              </>
-            )}
-
-          </div>
-        ))}
+      )}
       </div>
     </section>
   );

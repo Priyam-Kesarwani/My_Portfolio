@@ -11,6 +11,8 @@ import tailwindcssLogo from "./assets/tech_logo/tailwindcss.png";
 // removed unused: gsapLogo, materialuiLogo, bootstrapLogo, springbootLogo
 import nodejsLogo from "./assets/tech_logo/nodejs.png";
 import expressjsLogo from "./assets/tech_logo/express.png";
+import nestjsLogo from "./assets/tech_logo/nestjs.svg";
+import postgreLogo from "./assets/tech_logo/postgre.png";
 import mysqlLogo from "./assets/tech_logo/mysql.png";
 import mongodbLogo from "./assets/tech_logo/mongodb.png";
 // removed unused: firebaseLogo
@@ -27,13 +29,12 @@ import mcLogo from "./assets/tech_logo/mc.png";
 // removed unused: figmaLogo, netlifyLogo
 import vercelLogo from "./assets/tech_logo/vercel.png";
 // removed unused: postgreLogo, csharpLogo
-import CodeChef from "./assets/tech_logo/codechef.png";
-import LeetCode from "./assets/tech_logo/leetcode.png";
+import CodeChef from "./assets/tech_logo/codechef_white.svg";
+import LeetCode from "./assets/tech_logo/leetcode_white.svg";
+import Codeforces from "./assets/tech_logo/codeforces.svg";
 
 // Experience Section Logo's
-import webverseLogo from "./assets/company_logo/webverse_logo.png";
-import agcLogo from "./assets/company_logo/agc_logo.png";
-import newtonschoolLogo from "./assets/company_logo/newtonschool_logo.png";
+import huemanaiLogo from "./assets/company_logo/hueman-logo-dark.svg";
 
 // Education Section Logo's
 import ietLogo from "./assets/education_logo/IET_Logo.png";
@@ -72,10 +73,11 @@ export const SkillsInfo = [
       // { name: 'Springboot', logo: springbootLogo },
       { name: "Node JS", logo: nodejsLogo },
       { name: "Express JS", logo: expressjsLogo },
+      { name: "Nest JS", logo: nestjsLogo },
+      { name: "PostgreSQL", logo: postgreLogo },
       { name: "MySQL", logo: mysqlLogo },
       { name: "MongoDB", logo: mongodbLogo },
       // { name: 'Firebase', logo: firebaseLogo },
-      // { name: 'PostgreSQL', logo: postgreLogo },
     ],
   },
   {
@@ -107,8 +109,8 @@ export const SkillsInfo = [
     title: "Competitive Programming",
     skills: [
       { name: "CodeChef", logo: CodeChef },
-
       { name: "LeetCode", logo: LeetCode },
+      { name: "Codeforces", logo: Codeforces },
     ],
   },
 ];
@@ -124,54 +126,38 @@ export const codingProfiles = [
     url: "https://leetcode.com/u/Priyam_Kesarwani/",
     logo: LeetCode,
   },
+  {
+    name: "Codeforces",
+    url: "https://codeforces.com/profile/Priyam-Kesarwani",
+    logo: Codeforces,
+  },
 ];
 
 export const experiences = [
   {
     id: 0,
-    img: webverseLogo,
-    role: "Fullstack Developer",
-    company: "Webverse Digital",
-    date: "April 2024 - Present",
-    desc: "Developed dynamic and scalable web applications using the MERN stack, handling both frontend and backend development. Collaborated with cross-functional teams to build responsive UI, implement RESTful APIs, and optimize application performance in an agile environment.",
-    skills: [
-      "HTML",
-      "CSS",
-      "JavaScript",
-      "React JS",
-      "TypeScript",
-      "Node JS",
-      "Tailwind CSS",
-      "MongoDb",
-      "Redux",
-      " Next Js",
+    img: huemanaiLogo,
+    role: "Software Engineer Intern",
+    company: "HuemanAI",
+    location: "Noida",
+    date: "July 2025 – Present",
+    desc: "Architected and built core backend modules for a multi-tenant Restaurant/Table Management SaaS (Next.js, NestJS, PostgreSQL), scaling to serve 2+ live hospitality clients across booking, floor management, and payments.",
+    points: [
+      "Architected and built core backend modules for a multi-tenant Restaurant/Table Management SaaS (Next.js, NestJS, PostgreSQL), scaling to serve 2+ live hospitality clients across booking, floor management, and payments.",
+      "Designed a hierarchical multi-tenant data model (organization → venue → role) supporting 8+ heterogeneous venue types (restaurant, spa, sports court, membership, and more) under a single client, enabling scalable onboarding without schema rewrites.",
+      "Developed role-based access control across the platform, scoping data visibility and action permissions by organization, venue, and user role to enforce isolation across 10+ tenant accounts / venues.",
+      "Conducted a webhook and API security review covering idempotency, signature validation, and tenant isolation – including k6 load testing and chaos/break testing – flagging 5+ authorization gaps (including IDOR vectors) across payment and booking flows.",
     ],
-  },
-  {
-    id: 1,
-    img: agcLogo,
-    role: "Fullstack Engineer",
-    company: "Agumentik Group of Companies",
-    date: "July 2023 - March 2024",
-    desc: "Contributed to innovative projects as a Fullstack Engineer, leading both frontend and backend development using technologies such as HTML, CSS, JavaScript, PHP, SQL, Bootstrap, and ReactJS. Worked closely with the team to deliver responsive, high-performance web applications and improve user experience through seamless integration of various technologies.",
     skills: [
-      "ReactJS",
-      "Redux",
-      "JavaScript",
-      "Tailwind CSS",
-      "HTML",
-      "CSS",
-      "SQL",
+      "Next.js",
+      "NestJS",
+      "PostgreSQL",
+      "Multi-tenant SaaS",
+      "RBAC",
+      "k6 Testing",
+      "REST APIs",
+      "Security Auditing",
     ],
-  },
-  {
-    id: 2,
-    img: newtonschoolLogo,
-    role: "Frontend Intern",
-    company: "Newton School",
-    date: "September 2021 - August 2022",
-    desc: "Worked as a Frontend Developer Intern, designing and implementing scalable UI components and responsive websites using HTML, CSS, JavaScript, Bootstrap, and Material UI. Collaborated with the design team to translate wireframes and prototypes from Figma into interactive, user-friendly web pages.",
-    skills: ["HTML", "CSS", "Javascript", "Bootstrap", "Figma", "Material UI"],
   },
 ];
 
@@ -180,7 +166,7 @@ export const education = [
     id: 0,
     img: ietLogo,
     school: "Institute of Engineering and Technology, Lucknow",
-    date: "Oct 2022 - Present",
+    date: "Nov 2022 - June 2026",
     grade: "8 CGPA",
     desc: "Currently pursuing a Bachelor's degree (B.Tech) in Computer Science at IET Lucknow. Building a strong foundation in programming, software development, and computer science principles, including Data Structures, Algorithms, OOP, DBMS, Web Development, and Software Engineering. Actively participating in workshops and technical events to enhance practical skills. Expected graduation: 2026.",
     degree: "Bachelor of Technology - B.Tech (Computer Science)",
