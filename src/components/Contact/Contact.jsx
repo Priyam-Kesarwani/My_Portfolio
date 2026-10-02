@@ -5,11 +5,19 @@ import "react-toastify/dist/ReactToastify.css";
 import { FiMail, FiMapPin, FiSend, FiUser, FiMessageSquare, FiTag, FiBriefcase, FiCopy, FiCheck } from "react-icons/fi";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 import Tilt from "react-parallax-tilt";
+import ContactGuard from "./ContactGuard";
 
 const Contact = () => {
   const form = useRef();
+  const guardRef = useRef(null);
   const [loading, setLoading] = useState(false);
   const [copied, setCopied] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
 
   const handleCopyEmail = () => {
     navigator.clipboard.writeText("priyam.kesarwani72@gmail.com");
@@ -24,19 +32,72 @@ const Contact = () => {
 
   const sendEmail = (e) => {
     e.preventDefault();
+
+    const guard = guardRef.current?.getValue();
+
+    // Honeypot check: If bot filled hidden fields, simulate success without sending email
+    if (guard?.website || guard?.hpWebsite) {
+      setLoading(true);
+      setTimeout(() => {
+        setLoading(false);
+        form.current?.reset();
+        setFormData({ name: "", email: "", subject: "", message: "" });
+        guardRef.current?.reset();
+        toast.success("Message sent successfully! I will get back to you soon. ✅", {
+          position: "top-right",
+          autoClose: 3500,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          theme: "dark",
+        });
+      }, 500);
+      return;
+    }
+
+    // Turnstile Captcha verification check
+    if (!guard?.captchaToken) {
+      toast.warn("Please complete the verification check before sending. 🛡️", {
+        position: "top-right",
+        autoClose: 3500,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        theme: "dark",
+      });
+      return;
+    }
+
+    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID || "";
+    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID || "";
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY || "";
+
+    if (!serviceId || !templateId || !publicKey) {
+      toast.error("Contact service is not configured. Please email directly.", {
+        position: "top-right",
+        autoClose: 3500,
+        theme: "dark",
+      });
+      return;
+    }
+
     setLoading(true);
 
     emailjs
       .sendForm(
-        "service_ww3a44a", // EmailJS Service ID
-        "template_zg87q9a", // EmailJS Template ID
+        serviceId,
+        templateId,
         form.current,
-        "xq_izEhicFczHFxNy" // EmailJS Public Key
+        publicKey
       )
       .then(
         () => {
           setLoading(false);
           form.current.reset();
+          setFormData({ name: "", email: "", subject: "", message: "" });
+          guardRef.current?.reset();
           toast.success("Message sent successfully! I will get back to you soon. ✅", {
             position: "top-right",
             autoClose: 3500,
@@ -49,6 +110,7 @@ const Contact = () => {
         },
         (error) => {
           setLoading(false);
+          guardRef.current?.reset();
           console.error("Error sending message:", error);
           toast.error("Failed to send message. Please try again or email directly.", {
             position: "top-right",
@@ -202,6 +264,15 @@ const Contact = () => {
             </p>
 
             <form ref={form} onSubmit={sendEmail} className="flex flex-col space-y-4">
+              {/* Universal EmailJS Template Aliases - ensures all template variable formats are populated */}
+              <input type="hidden" name="from_name" value={formData.name} />
+              <input type="hidden" name="name" value={formData.name} />
+              <input type="hidden" name="from_email" value={formData.email} />
+              <input type="hidden" name="reply_to" value={formData.email} />
+              <input type="hidden" name="email" value={formData.email} />
+              <input type="hidden" name="title" value={formData.subject} />
+              <input type="hidden" name="time" value={new Date().toLocaleString()} />
+
               {/* Name & Email in 2 columns on sm+ */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
@@ -217,6 +288,10 @@ const Contact = () => {
                       name="user_name"
                       placeholder="e.g. John Doe"
                       required
+                      value={formData.name}
+                      onChange={(e) =>
+                        setFormData((prev) => ({ ...prev, name: e.target.value }))
+                      }
                       className="w-full pl-10 pr-4 py-3 rounded-xl bg-white/5 text-white placeholder-gray-500 border border-gray-700/80 focus:outline-none focus:border-[#8245ec] focus:ring-1 focus:ring-[#8245ec] transition-all text-sm"
                     />
                   </div>
@@ -235,6 +310,10 @@ const Contact = () => {
                       name="user_email"
                       placeholder="e.g. john@example.com"
                       required
+                      value={formData.email}
+                      onChange={(e) =>
+                        setFormData((prev) => ({ ...prev, email: e.target.value }))
+                      }
                       className="w-full pl-10 pr-4 py-3 rounded-xl bg-white/5 text-white placeholder-gray-500 border border-gray-700/80 focus:outline-none focus:border-[#8245ec] focus:ring-1 focus:ring-[#8245ec] transition-all text-sm"
                     />
                   </div>
@@ -255,6 +334,10 @@ const Contact = () => {
                     name="subject"
                     placeholder="e.g. Freelance Project / Full-Stack Role"
                     required
+                    value={formData.subject}
+                    onChange={(e) =>
+                      setFormData((prev) => ({ ...prev, subject: e.target.value }))
+                    }
                     className="w-full pl-10 pr-4 py-3 rounded-xl bg-white/5 text-white placeholder-gray-500 border border-gray-700/80 focus:outline-none focus:border-[#8245ec] focus:ring-1 focus:ring-[#8245ec] transition-all text-sm"
                   />
                 </div>
@@ -274,10 +357,17 @@ const Contact = () => {
                     placeholder="Tell me about your project, timeline, or inquiry..."
                     rows="5"
                     required
+                    value={formData.message}
+                    onChange={(e) =>
+                      setFormData((prev) => ({ ...prev, message: e.target.value }))
+                    }
                     className="w-full pl-10 pr-4 py-3 rounded-xl bg-white/5 text-white placeholder-gray-500 border border-gray-700/80 focus:outline-none focus:border-[#8245ec] focus:ring-1 focus:ring-[#8245ec] transition-all text-sm resize-none"
                   />
                 </div>
               </div>
+
+              {/* Cloudflare Turnstile Verification & Bot Protection */}
+              <ContactGuard ref={guardRef} id="portfolio-contact" />
 
               {/* Submit Button with Loading State */}
               <button
