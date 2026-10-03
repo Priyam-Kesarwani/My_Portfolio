@@ -1,6 +1,7 @@
 import React from "react";
 import { education } from "../../constants";
 import Tilt from "react-parallax-tilt";
+import LazyImage from "../LazyImage/LazyImage";
 
 const Education = () => {
   const isSingle = education.length === 1;
@@ -41,10 +42,11 @@ const Education = () => {
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-gray-800">
                   <div className="flex items-center space-x-4 sm:space-x-5 min-w-0">
                     <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white/10 border border-white/20 rounded-2xl p-2 sm:p-2.5 flex items-center justify-center shrink-0 overflow-hidden shadow-inner">
-                      <img
+                      <LazyImage
                         src={edu.img}
                         alt={edu.school}
                         className="w-full h-full object-contain"
+                        rootMargin="300px"
                       />
                     </div>
 
@@ -99,10 +101,11 @@ const Education = () => {
                   className="relative flex flex-col sm:flex-row items-start sm:items-center w-full"
                 >
                   <div className="absolute left-6 sm:left-1/2 transform -translate-x-1/2 bg-gray-900 border-2 sm:border-4 border-[#8245ec] w-11 h-11 sm:w-14 sm:h-14 rounded-full flex justify-center items-center z-10 shadow-[0_0_15px_rgba(130,69,236,0.6)] p-1.5 sm:p-2">
-                    <img
+                    <LazyImage
                       src={edu.img}
                       alt={edu.school}
                       className="w-full h-full object-contain rounded-full"
+                      rootMargin="300px"
                     />
                   </div>
 
@@ -123,10 +126,11 @@ const Education = () => {
                       <div className="w-full p-6 sm:p-7 rounded-2xl border border-gray-700/60 bg-gradient-to-b from-gray-900/90 to-[#0a0820]/90 backdrop-blur-md shadow-[0_0_20px_rgba(130,69,236,0.18)] hover:border-[#8245ec]/80 hover:shadow-[0_0_30px_rgba(130,69,236,0.35)] transition-all duration-300">
                         <div className="flex items-center space-x-4">
                           <div className="w-12 h-12 sm:w-14 sm:h-14 bg-white/10 border border-white/20 rounded-xl p-2 flex items-center justify-center shrink-0 overflow-hidden">
-                            <img
+                            <LazyImage
                               src={edu.img}
                               alt={edu.school}
                               className="max-w-full max-h-full object-contain"
+                              rootMargin="300px"
                             />
                           </div>
                           <div>

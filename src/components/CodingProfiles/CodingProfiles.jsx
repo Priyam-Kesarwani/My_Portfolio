@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { codingProfiles, dsaTopics } from "../../constants";
 import Tilt from "react-parallax-tilt";
 import { FiCode } from "react-icons/fi";
+import LazyImage from "../LazyImage/LazyImage";
 
 const CodingProfiles = () => {
   const [count, setCount] = useState(0);
@@ -150,10 +151,11 @@ const CodingProfiles = () => {
             {/* Top: Logo & Title */}
             <div className="flex flex-col items-center w-full">
               <div className="w-16 h-16 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center p-3 mb-4 shadow-inner group-hover:scale-105 transition-transform">
-                <img
+                <LazyImage
                   src={profile.logo}
                   alt={`${profile.name} logo`}
                   className="w-full h-full object-contain"
+                  rootMargin="300px"
                 />
               </div>
 

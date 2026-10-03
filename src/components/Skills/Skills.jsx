@@ -1,6 +1,7 @@
 import React from "react";
 import { SkillsInfo } from "../../constants";
 import Tilt from "react-parallax-tilt";
+import LazyImage from "../LazyImage/LazyImage";
 
 const Skills = () => (
   <section
@@ -50,10 +51,11 @@ const Skills = () => (
                       key={skill.name}
                       className="flex items-center justify-center space-x-2 bg-white/5 border border-gray-700/70 hover:border-[#8245ec]/80 rounded-2xl py-2.5 px-2.5 sm:px-3 text-center transition-colors group"
                     >
-                      <img
+                      <LazyImage
                         src={skill.logo}
                         alt={`${skill.name} logo`}
                         className="w-5 h-5 sm:w-6 sm:h-6 object-contain shrink-0 group-hover:scale-110 transition-transform"
+                        rootMargin="300px"
                       />
                       <span className="text-xs sm:text-sm text-gray-200 font-medium truncate">
                         {skill.name}

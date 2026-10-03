@@ -3,6 +3,7 @@ import { projects } from "../../constants";
 import Tilt from "react-parallax-tilt";
 import { FaGithub } from "react-icons/fa";
 import { FiExternalLink, FiX } from "react-icons/fi";
+import LazyImage from "../LazyImage/LazyImage";
 
 const Work = () => {
   const [selectedProject, setSelectedProject] = useState(null);
@@ -44,10 +45,11 @@ const Work = () => {
             className="lg:w-1/2 p-5 sm:p-6 lg:p-7 flex-shrink-0 cursor-pointer group"
           >
             <div className="w-full h-56 sm:h-72 lg:h-full min-h-[220px] rounded-2xl overflow-hidden relative border border-white/10 bg-black/40 shadow-inner">
-              <img
+              <LazyImage
                 src={project.image}
                 alt={project.title}
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                rootMargin="400px"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-60 group-hover:opacity-30 transition-opacity" />
               <div className="absolute bottom-3 right-3 bg-black/60 backdrop-blur-md px-3 py-1 rounded-full text-xs text-purple-300 border border-purple-500/30 flex items-center gap-1.5 opacity-90 group-hover:opacity-100">
@@ -144,10 +146,11 @@ const Work = () => {
           className="p-4 cursor-pointer group"
         >
           <div className="w-full h-44 rounded-xl overflow-hidden relative border border-white/10 bg-black/40">
-            <img
+            <LazyImage
               src={project.image}
               alt={project.title}
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              rootMargin="400px"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-40 group-hover:opacity-10 transition-opacity" />
           </div>
@@ -319,7 +322,7 @@ const Work = () => {
             <div className="p-6 sm:p-8 pt-2">
               {/* Project Image */}
               <div className="w-full rounded-xl overflow-hidden border border-white/15 bg-black/50 mb-6 max-h-80 shadow-inner">
-                <img
+                <LazyImage
                   src={selectedProject.image}
                   alt={selectedProject.title}
                   className="w-full h-full object-contain"
