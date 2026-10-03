@@ -1,6 +1,6 @@
 import React from "react";
 import { Typewriter } from "react-simple-typewriter";
-import Profile from "../../assets/profile.jpg"; 
+import Profile from "../../assets/profile.webp"; 
 import Tilt from "react-parallax-tilt";
 import ProfileScene3D from "./ProfileScene3D";
 

@@ -1,33 +1,33 @@
 // Skills Section Logo's
-import htmlLogo from "./assets/tech_logo/html.png";
-import cssLogo from "./assets/tech_logo/css.png";
+import htmlLogo from "./assets/tech_logo/html.webp";
+import cssLogo from "./assets/tech_logo/css.webp";
 // removed unused: sassLogo
-import javascriptLogo from "./assets/tech_logo/javascript.png";
-import reactjsLogo from "./assets/tech_logo/reactjs.png";
+import javascriptLogo from "./assets/tech_logo/javascript.webp";
+import reactjsLogo from "./assets/tech_logo/reactjs.webp";
 // removed unused: angularLogo
-import reduxLogo from "./assets/tech_logo/redux.png";
-import nextjsLogo from "./assets/tech_logo/nextjs.png";
-import tailwindcssLogo from "./assets/tech_logo/tailwindcss.png";
+import reduxLogo from "./assets/tech_logo/redux.webp";
+import nextjsLogo from "./assets/tech_logo/nextjs.webp";
+import tailwindcssLogo from "./assets/tech_logo/tailwindcss.webp";
 // removed unused: gsapLogo, materialuiLogo, bootstrapLogo, springbootLogo
-import nodejsLogo from "./assets/tech_logo/nodejs.png";
-import expressjsLogo from "./assets/tech_logo/express.png";
+import nodejsLogo from "./assets/tech_logo/nodejs.webp";
+import expressjsLogo from "./assets/tech_logo/express.webp";
 import nestjsLogo from "./assets/tech_logo/nestjs.svg";
-import postgreLogo from "./assets/tech_logo/postgre.png";
-import mysqlLogo from "./assets/tech_logo/mysql.png";
-import mongodbLogo from "./assets/tech_logo/mongodb.png";
+import postgreLogo from "./assets/tech_logo/postgre.webp";
+import mysqlLogo from "./assets/tech_logo/mysql.webp";
+import mongodbLogo from "./assets/tech_logo/mongodb.webp";
 // removed unused: firebaseLogo
-import cLogo from "./assets/tech_logo/c.png";
-import cppLogo from "./assets/tech_logo/cpp.png";
-import javaLogo from "./assets/tech_logo/java.png";
-import pythonLogo from "./assets/tech_logo/python.png";
-import typescriptLogo from "./assets/tech_logo/typescript.png";
-import gitLogo from "./assets/tech_logo/git.png";
-import githubLogo from "./assets/tech_logo/github.png";
-import vscodeLogo from "./assets/tech_logo/vscode.png";
-import postmanLogo from "./assets/tech_logo/postman.png";
-import mcLogo from "./assets/tech_logo/mc.png";
+import cLogo from "./assets/tech_logo/c.webp";
+import cppLogo from "./assets/tech_logo/cpp.webp";
+import javaLogo from "./assets/tech_logo/java.webp";
+import pythonLogo from "./assets/tech_logo/python.webp";
+import typescriptLogo from "./assets/tech_logo/typescript.webp";
+import gitLogo from "./assets/tech_logo/git.webp";
+import githubLogo from "./assets/tech_logo/github.webp";
+import vscodeLogo from "./assets/tech_logo/vscode.webp";
+import postmanLogo from "./assets/tech_logo/postman.webp";
+import mcLogo from "./assets/tech_logo/mc.webp";
 // removed unused: figmaLogo, netlifyLogo
-import vercelLogo from "./assets/tech_logo/vercel.png";
+import vercelLogo from "./assets/tech_logo/vercel.webp";
 // removed unused: postgreLogo, csharpLogo
 import CodeChef from "./assets/tech_logo/codechef_white.svg";
 import LeetCode from "./assets/tech_logo/leetcode_white.svg";
@@ -40,15 +40,15 @@ import huemanaiLogo from "./assets/company_logo/hueman-logo-dark.svg";
 import ietLogo from "./assets/education_logo/IET_Logo.png";
 
 // Project Section Logo's
-import financeflowLogo from "./assets/work_logo/Finance_Flow.png";
-import hostkindleLogo from "./assets/work_logo/HostKindle.png";
-import chessGameLogo from "./assets/work_logo/Chess_Game.png";
-import youtubeCloneLogo from "./assets/work_logo/Youtube_Clone.png";
-import razorpayClone from "./assets/work_logo/Razorpay_Clone.png";
-import virtualRLogo from "./assets/work_logo/VirtualR.png";
-import notesAppLogo from "./assets/work_logo/Notes_app.png";
-import visualProductLogo from "./assets/work_logo/Visual_Product.png";
-import nextwatchLogo from "./assets/work_logo/NextWatch.png";
+import financeflowLogo from "./assets/work_logo/Finance_Flow.webp";
+import hostkindleLogo from "./assets/work_logo/HostKindle.webp";
+import chessGameLogo from "./assets/work_logo/Chess_Game.webp";
+import youtubeCloneLogo from "./assets/work_logo/Youtube_Clone.webp";
+import razorpayClone from "./assets/work_logo/Razorpay_Clone.webp";
+import virtualRLogo from "./assets/work_logo/VirtualR.webp";
+import notesAppLogo from "./assets/work_logo/Notes_app.webp";
+import visualProductLogo from "./assets/work_logo/Visual_Product.webp";
+import nextwatchLogo from "./assets/work_logo/NextWatch.webp";
 export const SkillsInfo = [
   {
     title: "Frontend",
