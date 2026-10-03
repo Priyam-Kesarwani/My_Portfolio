@@ -177,7 +177,7 @@ const Contact = () => {
                       Work Status
                     </h4>
                     <p className="text-sm font-semibold text-emerald-300">
-                      Ready to work on freelancing projects
+                      Ready to work on freelancing projects and full stack development
                     </p>
                   </div>
                 </div>
@@ -218,7 +218,7 @@ const Contact = () => {
                       Location
                     </h4>
                     <p className="text-sm font-medium text-gray-200">
-                      Noida / Lucknow / Prayagraj, India (Open to Remote Worldwide)
+                      Delhi NCR / Lucknow / Prayagraj, India (Open to Remote Worldwide)
                     </p>
                   </div>
                 </div>
