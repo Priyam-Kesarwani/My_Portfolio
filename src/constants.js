@@ -165,7 +165,7 @@ export const experiences = [
   {
     id: 0,
     img: huemanaiLogo,
-    role: "Software Engineer Intern",
+    role: "Software Developer Intern",
     company: "HuemanAI",
     location: "Noida",
     date: "July 2025 – Present",
