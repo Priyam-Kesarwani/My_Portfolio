@@ -212,6 +212,18 @@ export const projects = [
     ],
     github: "https://github.com/Priyam-Kesarwani/HostKindle",
     webapp: "https://hostkindle.onrender.com",
+    demoCredentials: [
+      {
+        role: "Host",
+        email: "aman1234@gmail.com",
+        password: "Aman@123",
+      },
+      {
+        role: "Guest",
+        email: "harshgupta@gmail.com",
+        password: "Harsh@123",
+      },
+    ],
   },
   {
     id: 1,

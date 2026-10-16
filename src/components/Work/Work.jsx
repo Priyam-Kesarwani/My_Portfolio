@@ -11,6 +11,9 @@ const DemoCredentialsBox = ({ credentials, compact = false }) => {
 
   if (!credentials) return null;
 
+  const credList = Array.isArray(credentials) ? credentials : [credentials];
+  if (credList.length === 0) return null;
+
   const copyText = (text, field, label) => {
     navigator.clipboard.writeText(text);
     setCopiedField(field);
@@ -40,36 +43,45 @@ const DemoCredentialsBox = ({ credentials, compact = false }) => {
         <span className="text-[10px] text-gray-400 font-normal">Click to copy</span>
       </div>
 
-      <div className="flex flex-wrap items-center gap-2">
-        <button
-          type="button"
-          onClick={() => copyText(credentials.email, "email", "Email")}
-          className="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-black/50 hover:bg-black/70 border border-white/10 hover:border-purple-400/60 text-xs text-gray-200 transition-all font-mono cursor-pointer"
-          title="Click to copy email"
-        >
-          <span className="text-gray-400 font-sans text-[11px]">Email:</span>
-          <span className="text-emerald-300 font-semibold">{credentials.email}</span>
-          {copiedField === "email" ? (
-            <FiCheck className="text-emerald-400 text-xs shrink-0" />
-          ) : (
-            <FiCopy className="text-gray-400 hover:text-white text-xs shrink-0" />
-          )}
-        </button>
+      <div className="flex flex-col gap-2.5">
+        {credList.map((cred, idx) => (
+          <div key={idx} className="flex flex-wrap items-center gap-2">
+            {cred.role && (
+              <span className="px-2 py-0.5 rounded-md text-[10px] font-bold uppercase tracking-wider bg-purple-500/30 text-purple-200 border border-purple-400/40 shrink-0">
+                {cred.role}
+              </span>
+            )}
+            <button
+              type="button"
+              onClick={() => copyText(cred.email, `email-${idx}`, `${cred.role ? `${cred.role} ` : ""}Email`)}
+              className="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-black/50 hover:bg-black/70 border border-white/10 hover:border-purple-400/60 text-xs text-gray-200 transition-all font-mono cursor-pointer"
+              title="Click to copy email"
+            >
+              <span className="text-gray-400 font-sans text-[11px]">Email:</span>
+              <span className="text-emerald-300 font-semibold">{cred.email}</span>
+              {copiedField === `email-${idx}` ? (
+                <FiCheck className="text-emerald-400 text-xs shrink-0" />
+              ) : (
+                <FiCopy className="text-gray-400 hover:text-white text-xs shrink-0" />
+              )}
+            </button>
 
-        <button
-          type="button"
-          onClick={() => copyText(credentials.password, "password", "Password")}
-          className="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-black/50 hover:bg-black/70 border border-white/10 hover:border-purple-400/60 text-xs text-gray-200 transition-all font-mono cursor-pointer"
-          title="Click to copy password"
-        >
-          <span className="text-gray-400 font-sans text-[11px]">Password:</span>
-          <span className="text-emerald-300 font-semibold">{credentials.password}</span>
-          {copiedField === "password" ? (
-            <FiCheck className="text-emerald-400 text-xs shrink-0" />
-          ) : (
-            <FiCopy className="text-gray-400 hover:text-white text-xs shrink-0" />
-          )}
-        </button>
+            <button
+              type="button"
+              onClick={() => copyText(cred.password, `password-${idx}`, `${cred.role ? `${cred.role} ` : ""}Password`)}
+              className="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-black/50 hover:bg-black/70 border border-white/10 hover:border-purple-400/60 text-xs text-gray-200 transition-all font-mono cursor-pointer"
+              title="Click to copy password"
+            >
+              <span className="text-gray-400 font-sans text-[11px]">Password:</span>
+              <span className="text-emerald-300 font-semibold">{cred.password}</span>
+              {copiedField === `password-${idx}` ? (
+                <FiCheck className="text-emerald-400 text-xs shrink-0" />
+              ) : (
+                <FiCopy className="text-gray-400 hover:text-white text-xs shrink-0" />
+              )}
+            </button>
+          </div>
+        ))}
       </div>
     </div>
   );
