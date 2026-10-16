@@ -128,7 +128,8 @@ const Experience = () => {
                   key={experience.id}
                   className="relative flex flex-col sm:flex-row items-start sm:items-center w-full"
                 >
-                  <div className="absolute left-6 sm:left-1/2 transform -translate-x-1/2 bg-gray-900 border-2 sm:border-4 border-[#8245ec] w-11 h-11 sm:w-14 sm:h-14 rounded-full flex justify-center items-center z-10 shadow-[0_0_15px_rgba(130,69,236,0.6)] p-1.5 sm:p-2">
+                  {/* Central Node (Logo Circle) */}
+                  <div className="absolute left-6 sm:left-1/2 transform -translate-x-1/2 top-8 sm:top-1/2 -translate-y-1/2 bg-gray-900 border-2 sm:border-4 border-[#8245ec] w-11 h-11 sm:w-14 sm:h-14 rounded-full flex justify-center items-center z-10 shadow-[0_0_15px_rgba(130,69,236,0.6)] p-1.5 sm:p-2">
                     <LazyImage
                       src={experience.img}
                       alt={experience.company}
@@ -136,6 +137,18 @@ const Experience = () => {
                       rootMargin="300px"
                     />
                   </div>
+
+                  {/* Horizontal Connector Line: Desktop */}
+                  <div
+                    className={`hidden sm:block absolute h-0.5 bg-gradient-to-r ${
+                      isEven
+                        ? "from-[#8245ec]/80 to-[#8245ec] left-[calc(50%-3rem)] w-[3rem]"
+                        : "from-[#8245ec] to-[#8245ec]/80 left-1/2 w-[3rem]"
+                    } top-1/2 -translate-y-1/2 z-0 shadow-[0_0_10px_rgba(130,69,236,0.8)]`}
+                  ></div>
+
+                  {/* Horizontal Connector Line: Mobile */}
+                  <div className="sm:hidden absolute left-6 w-8 h-0.5 bg-[#8245ec] top-8 -translate-y-1/2 z-0 shadow-[0_0_8px_rgba(130,69,236,0.8)]"></div>
 
                   <div
                     className={`w-full sm:w-[calc(50%-2.5rem)] ml-14 sm:ml-0 ${
@@ -163,7 +176,7 @@ const Experience = () => {
                           </div>
 
                           <div className="flex-1 min-w-0">
-                            <h3 className="text-lg sm:text-xl font-bold text-white truncate">
+                            <h3 className="text-lg sm:text-xl font-bold text-white leading-snug">
                               {experience.role}
                             </h3>
                             <h4 className="text-sm font-medium text-purple-300">
