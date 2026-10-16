@@ -30,7 +30,7 @@ const Contact = () => {
     setTimeout(() => setCopied(false), 2000);
   };
 
-  const sendEmail = (e) => {
+  const sendEmail = async (e) => {
     e.preventDefault();
 
     const guard = guardRef.current?.getValue();
@@ -85,44 +85,58 @@ const Contact = () => {
 
     setLoading(true);
 
-    emailjs
-      .sendForm(
-        serviceId,
-        templateId,
-        form.current,
-        publicKey
-      )
-      .then(
-        () => {
-          setLoading(false);
-          form.current.reset();
-          setFormData({ name: "", email: "", subject: "", message: "" });
-          guardRef.current?.reset();
-          toast.success("Message sent successfully! I will get back to you soon. ✅", {
-            position: "top-right",
-            autoClose: 3500,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            theme: "dark",
-          });
-        },
-        (error) => {
-          setLoading(false);
-          guardRef.current?.reset();
-          console.error("Error sending message:", error);
-          toast.error("Failed to send message. Please try again or email directly.", {
-            position: "top-right",
-            autoClose: 3500,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            theme: "dark",
-          });
-        }
-      );
+    try {
+      // 1. Validate the Turnstile token via Cloudflare siteverify endpoint
+      const verifyRes = await fetch("/api/verify-turnstile", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ token: guard.captchaToken }),
+      });
+
+      const verifyData = await verifyRes.json().catch(() => null);
+
+      if (!verifyRes.ok || !verifyData?.success) {
+        setLoading(false);
+        guardRef.current?.reset();
+        console.warn("Turnstile siteverify response:", verifyData);
+        toast.error("Verification failed. Please complete the security check again. 🛡️", {
+          position: "top-right",
+          autoClose: 3500,
+          theme: "dark",
+        });
+        return;
+      }
+
+      // 2. Token confirmed valid by Cloudflare siteverify - dispatch message via EmailJS
+      await emailjs.sendForm(serviceId, templateId, form.current, publicKey);
+
+      setLoading(false);
+      form.current?.reset();
+      setFormData({ name: "", email: "", subject: "", message: "" });
+      guardRef.current?.reset();
+      toast.success("Message sent successfully! I will get back to you soon. ✅", {
+        position: "top-right",
+        autoClose: 3500,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        theme: "dark",
+      });
+    } catch (error) {
+      setLoading(false);
+      guardRef.current?.reset();
+      console.error("Error sending message:", error);
+      toast.error("Failed to send message. Please try again or email directly.", {
+        position: "top-right",
+        autoClose: 3500,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        theme: "dark",
+      });
+    }
   };
 
   return (
