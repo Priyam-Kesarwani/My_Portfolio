@@ -142,35 +142,35 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="w-full bg-section-space relative z-[1] -mt-16 clip-polygon-right pt-24 pb-28 sm:pb-32 font-sans scroll-mt-24"
+      className="w-full bg-section-space relative z-[1] -mt-16 clip-polygon-right pt-24 pb-28 sm:pb-32 font-sans scroll-mt-24 overflow-hidden"
     >
-      <div className="max-w-7xl mx-auto px-6 sm:px-10 md:px-12 lg:px-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-10 md:px-12 lg:px-16">
         {/* Section Title */}
         <div className="text-center mb-8 sm:mb-10">
           <h2 className="text-3xl sm:text-4xl font-bold text-white tracking-wider">
             CONTACT
           </h2>
           <div className="w-24 h-1 bg-[#8245ec] mx-auto mt-2 rounded-full"></div>
-          <p className="text-gray-400 mt-4 text-base sm:text-lg font-medium max-w-2xl mx-auto">
+          <p className="text-gray-400 mt-4 text-sm sm:text-lg font-medium max-w-2xl mx-auto">
             I’d love to hear from you—reach out for any projects, opportunities, or inquiries!
           </p>
         </div>
 
         {/* Freelance Availability Pill */}
-        <div className="flex justify-center mb-10 sm:mb-14">
-          <div className="inline-flex items-center gap-2.5 px-5 sm:px-6 py-2.5 rounded-full border border-emerald-500/40 bg-gradient-to-r from-emerald-950/70 via-emerald-900/30 to-emerald-950/70 text-emerald-300 text-xs sm:text-sm font-semibold shadow-[0_0_20px_rgba(16,185,129,0.22)] backdrop-blur-md">
-            <span className="relative flex h-2.5 w-2.5">
+        <div className="flex justify-center mb-8 sm:mb-14">
+          <div className="inline-flex items-center gap-2 sm:gap-2.5 px-3.5 sm:px-6 py-2 sm:py-2.5 rounded-full border border-emerald-500/40 bg-gradient-to-r from-emerald-950/70 via-emerald-900/30 to-emerald-950/70 text-emerald-300 text-xs sm:text-sm font-semibold shadow-[0_0_20px_rgba(16,185,129,0.22)] backdrop-blur-md max-w-full text-center">
+            <span className="relative flex h-2.5 w-2.5 shrink-0">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
             </span>
-            <span>Ready to work on freelancing projects & full-stack development</span>
+            <span className="leading-snug">Ready to work on freelancing projects & full-stack development</span>
           </div>
         </div>
 
         {/* 2-Column Grid: Info & Form */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 max-w-6xl mx-auto items-stretch">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 max-w-6xl mx-auto items-stretch">
           {/* Left Column: Direct Info Card */}
-          <div className="lg:col-span-5 flex flex-col justify-between rounded-2xl border border-gray-700/60 bg-gradient-to-b from-gray-900/90 via-[#0d0926]/90 to-[#0a0820]/90 backdrop-blur-md shadow-[0_0_25px_rgba(130,69,236,0.18)] p-6 sm:p-8">
+          <div className="lg:col-span-5 flex flex-col justify-between rounded-2xl border border-gray-700/60 bg-gradient-to-b from-gray-900/90 via-[#0d0926]/90 to-[#0a0820]/90 backdrop-blur-md shadow-[0_0_25px_rgba(130,69,236,0.18)] p-5 sm:p-8">
             <div>
               <h3 className="text-2xl sm:text-3xl font-bold text-white mb-3">
                 Let's Build Together
@@ -207,7 +207,7 @@ const Contact = () => {
                     </h4>
                     <a
                       href="mailto:priyam.kesarwani72@gmail.com"
-                      className="text-sm font-medium text-white hover:text-purple-300 transition-colors truncate block"
+                      className="text-xs sm:text-sm font-medium text-white hover:text-purple-300 transition-colors truncate block"
                     >
                       priyam.kesarwani72@gmail.com
                     </a>
@@ -231,7 +231,7 @@ const Contact = () => {
                     <h4 className="text-xs uppercase tracking-wider text-gray-400 font-semibold">
                       Location
                     </h4>
-                    <p className="text-sm font-medium text-gray-200">
+                    <p className="text-xs sm:text-sm font-medium text-gray-200">
                       Delhi NCR / Lucknow / Prayagraj, India (Open to Remote Worldwide)
                     </p>
                   </div>
@@ -240,7 +240,7 @@ const Contact = () => {
             </div>
 
             {/* Quick Profile Links */}
-            <div className="pt-8 mt-6 border-t border-gray-800">
+            <div className="pt-6 sm:pt-8 mt-6 border-t border-gray-800">
               <p className="text-xs text-gray-400 uppercase tracking-wider font-semibold mb-3">
                 Connect Directly
               </p>
@@ -249,7 +249,7 @@ const Contact = () => {
                   href="https://github.com/Priyam-Kesarwani"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-1 inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-purple-500/50 text-gray-200 hover:text-white text-xs sm:text-sm font-semibold transition-all cursor-pointer"
+                  className="flex-1 inline-flex items-center justify-center gap-2 py-2.5 px-3 sm:px-4 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-purple-500/50 text-gray-200 hover:text-white text-xs sm:text-sm font-semibold transition-all cursor-pointer"
                 >
                   <FaGithub className="text-base" />
                   <span>GitHub</span>
@@ -258,7 +258,7 @@ const Contact = () => {
                   href="https://www.linkedin.com/in/priyam-kesarwani-55aa0924b/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-1 inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-purple-500/50 text-gray-200 hover:text-white text-xs sm:text-sm font-semibold transition-all cursor-pointer"
+                  className="flex-1 inline-flex items-center justify-center gap-2 py-2.5 px-3 sm:px-4 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-purple-500/50 text-gray-200 hover:text-white text-xs sm:text-sm font-semibold transition-all cursor-pointer"
                 >
                   <FaLinkedin className="text-base text-blue-400" />
                   <span>LinkedIn</span>
@@ -268,7 +268,7 @@ const Contact = () => {
           </div>
 
           {/* Right Column: Contact Form */}
-          <div className="lg:col-span-7 rounded-2xl border border-gray-700/60 bg-gradient-to-b from-gray-900/90 via-[#0f0a2b]/90 to-[#0a0820]/90 backdrop-blur-md shadow-[0_0_30px_rgba(130,69,236,0.22)] p-6 sm:p-8 hover:border-[#8245ec]/70 transition-all duration-300">
+          <div className="lg:col-span-7 rounded-2xl border border-gray-700/60 bg-gradient-to-b from-gray-900/90 via-[#0f0a2b]/90 to-[#0a0820]/90 backdrop-blur-md shadow-[0_0_30px_rgba(130,69,236,0.22)] p-4 sm:p-8 hover:border-[#8245ec]/70 transition-all duration-300">
             <h3 className="text-xl sm:text-2xl font-bold text-white mb-2 flex items-center gap-2">
               <span>Send Me a Message</span>
               <span className="text-lg">🚀</span>

@@ -110,20 +110,20 @@ const Education = () => {
                   </div>
 
                   <div
-                    className={`w-full sm:w-[calc(50%-2.5rem)] ml-14 sm:ml-0 ${
+                    className={`w-[calc(100%-2rem)] ml-8 sm:ml-0 sm:w-[calc(50%-2.5rem)] ${
                       isEven ? "sm:mr-auto sm:pr-2" : "sm:ml-auto sm:pl-2"
                     }`}
                   >
                     <Tilt
-                      tiltMaxAngleX={8}
-                      tiltMaxAngleY={8}
+                      tiltMaxAngleX={6}
+                      tiltMaxAngleY={6}
                       perspective={1200}
                       scale={1.01}
                       transitionSpeed={800}
-                      gyroscope={true}
+                      gyroscope={false}
                       className="w-full"
                     >
-                      <div className="w-full p-6 sm:p-7 rounded-2xl border border-gray-700/60 bg-gradient-to-b from-gray-900/90 to-[#0a0820]/90 backdrop-blur-md shadow-[0_0_20px_rgba(130,69,236,0.18)] hover:border-[#8245ec]/80 hover:shadow-[0_0_30px_rgba(130,69,236,0.35)] transition-all duration-300">
+                      <div className="w-full p-4 sm:p-7 rounded-2xl border border-gray-700/60 bg-gradient-to-b from-gray-900/90 to-[#0a0820]/90 backdrop-blur-md shadow-[0_0_20px_rgba(130,69,236,0.18)] hover:border-[#8245ec]/80 hover:shadow-[0_0_30px_rgba(130,69,236,0.35)] transition-all duration-300">
                         <div className="flex items-center space-x-4">
                           <div className="w-12 h-12 sm:w-14 sm:h-14 bg-white/10 border border-white/20 rounded-xl p-2 flex items-center justify-center shrink-0 overflow-hidden">
                             <LazyImage

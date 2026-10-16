@@ -1,4 +1,4 @@
-import React, { forwardRef, useEffect, useImperativeHandle, useRef } from "react";
+import React, { forwardRef, useEffect, useImperativeHandle, useRef, useState } from "react";
 
 let scriptPromise = null;
 
@@ -36,10 +36,12 @@ export const ContactGuard = forwardRef(function ContactGuard(
   ref
 ) {
   const containerRef = useRef(null);
+  const wrapperRef = useRef(null);
   const websiteRef = useRef(null);
   const hpWebsiteRef = useRef(null);
   const widgetId = useRef(null);
   const tokenRef = useRef("");
+  const [scale, setScale] = useState(1);
 
   useImperativeHandle(ref, () => ({
     reset: () => {
@@ -55,6 +57,42 @@ export const ContactGuard = forwardRef(function ContactGuard(
     }),
   }));
 
+  // Dynamic responsive scaling for mobile screens < 300px
+  useEffect(() => {
+    const updateScale = () => {
+      if (!wrapperRef.current) return;
+      const width = wrapperRef.current.offsetWidth;
+      if (width > 0 && width < 300) {
+        setScale(Math.max(0.65, width / 300));
+      } else {
+        setScale(1);
+      }
+    };
+
+    updateScale();
+
+    let ro = null;
+    if (typeof ResizeObserver !== "undefined" && wrapperRef.current) {
+      ro = new ResizeObserver((entries) => {
+        for (const entry of entries) {
+          const width = entry.contentRect.width;
+          if (width > 0 && width < 300) {
+            setScale(Math.max(0.65, width / 300));
+          } else {
+            setScale(1);
+          }
+        }
+      });
+      ro.observe(wrapperRef.current);
+    }
+
+    window.addEventListener("resize", updateScale);
+    return () => {
+      window.removeEventListener("resize", updateScale);
+      if (ro) ro.disconnect();
+    };
+  }, []);
+
   useEffect(() => {
     if (!siteKey || !containerRef.current) return;
     let cancelled = false;
@@ -65,6 +103,7 @@ export const ContactGuard = forwardRef(function ContactGuard(
         widgetId.current = window.turnstile.render(containerRef.current, {
           sitekey: siteKey,
           theme: theme,
+          size: "flexible",
           callback: (token) => {
             tokenRef.current = token;
           },
@@ -114,10 +153,25 @@ export const ContactGuard = forwardRef(function ContactGuard(
         />
       </div>
 
-      {/* Cloudflare Turnstile captcha widget */}
+      {/* Cloudflare Turnstile captcha widget with seamless mobile scaling */}
       {siteKey ? (
-        <div className="flex justify-start my-1 overflow-x-auto">
-          <div ref={containerRef} className="min-h-[65px] rounded-lg overflow-hidden" />
+        <div
+          ref={wrapperRef}
+          className="w-full flex justify-start my-1 overflow-hidden transition-all duration-150"
+          style={{
+            height: scale < 1 ? `${Math.ceil(68 * scale)}px` : undefined,
+          }}
+        >
+          <div
+            ref={containerRef}
+            className="min-h-[65px] rounded-lg"
+            style={{
+              width: scale < 1 ? "300px" : "100%",
+              minWidth: scale < 1 ? "300px" : undefined,
+              transform: scale < 1 ? `scale(${scale})` : "none",
+              transformOrigin: "top left",
+            }}
+          />
         </div>
       ) : (
         <p className="text-xs text-red-400 mt-1">Verification check is not configured.</p>
