@@ -2,8 +2,78 @@ import React, { useState } from "react";
 import { projects } from "../../constants";
 import Tilt from "react-parallax-tilt";
 import { FaGithub } from "react-icons/fa";
-import { FiExternalLink, FiX } from "react-icons/fi";
+import { FiExternalLink, FiX, FiCopy, FiCheck } from "react-icons/fi";
+import { toast } from "react-toastify";
 import LazyImage from "../LazyImage/LazyImage";
+
+const DemoCredentialsBox = ({ credentials, compact = false }) => {
+  const [copiedField, setCopiedField] = useState(null);
+
+  if (!credentials) return null;
+
+  const copyText = (text, field, label) => {
+    navigator.clipboard.writeText(text);
+    setCopiedField(field);
+    toast.info(`${label} copied to clipboard!`, {
+      position: "top-right",
+      autoClose: 2000,
+      theme: "dark",
+    });
+    setTimeout(() => setCopiedField(null), 2000);
+  };
+
+  return (
+    <div
+      onClick={(e) => e.stopPropagation()}
+      className={`rounded-xl border border-purple-500/40 bg-gradient-to-r from-purple-950/60 via-[#120a2e]/70 to-purple-950/60 p-3 shadow-inner ${
+        compact ? "mb-3 text-xs" : "mb-5 text-xs sm:text-sm"
+      }`}
+    >
+      <div className="flex items-center justify-between text-purple-300 font-semibold mb-2">
+        <span className="flex items-center gap-1.5 text-xs">
+          <span className="relative flex h-2 w-2">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+          </span>
+          <span>Demo Account Credentials</span>
+        </span>
+        <span className="text-[10px] text-gray-400 font-normal">Click to copy</span>
+      </div>
+
+      <div className="flex flex-wrap items-center gap-2">
+        <button
+          type="button"
+          onClick={() => copyText(credentials.email, "email", "Email")}
+          className="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-black/50 hover:bg-black/70 border border-white/10 hover:border-purple-400/60 text-xs text-gray-200 transition-all font-mono cursor-pointer"
+          title="Click to copy email"
+        >
+          <span className="text-gray-400 font-sans text-[11px]">Email:</span>
+          <span className="text-emerald-300 font-semibold">{credentials.email}</span>
+          {copiedField === "email" ? (
+            <FiCheck className="text-emerald-400 text-xs shrink-0" />
+          ) : (
+            <FiCopy className="text-gray-400 hover:text-white text-xs shrink-0" />
+          )}
+        </button>
+
+        <button
+          type="button"
+          onClick={() => copyText(credentials.password, "password", "Password")}
+          className="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-black/50 hover:bg-black/70 border border-white/10 hover:border-purple-400/60 text-xs text-gray-200 transition-all font-mono cursor-pointer"
+          title="Click to copy password"
+        >
+          <span className="text-gray-400 font-sans text-[11px]">Password:</span>
+          <span className="text-emerald-300 font-semibold">{credentials.password}</span>
+          {copiedField === "password" ? (
+            <FiCheck className="text-emerald-400 text-xs shrink-0" />
+          ) : (
+            <FiCopy className="text-gray-400 hover:text-white text-xs shrink-0" />
+          )}
+        </button>
+      </div>
+    </div>
+  );
+};
 
 const Work = () => {
   const [selectedProject, setSelectedProject] = useState(null);
@@ -91,6 +161,9 @@ const Work = () => {
                 ))}
               </div>
             </div>
+
+            {/* Demo Credentials if available */}
+            <DemoCredentialsBox credentials={project.demoCredentials} />
 
             {/* Action Buttons */}
             <div className="flex flex-wrap items-center gap-3 pt-4 border-t border-gray-800">
@@ -184,6 +257,9 @@ const Work = () => {
               )}
             </div>
           </div>
+
+          {/* Demo Credentials if available */}
+          <DemoCredentialsBox credentials={project.demoCredentials} compact />
 
           {/* Action Links */}
           <div className="flex items-center gap-2 pt-3 border-t border-gray-800">
@@ -348,6 +424,9 @@ const Work = () => {
                   </span>
                 ))}
               </div>
+
+              {/* Demo Credentials if available */}
+              <DemoCredentialsBox credentials={selectedProject.demoCredentials} />
 
               {/* Action Buttons */}
               <div className="flex flex-col sm:flex-row gap-3 justify-end">

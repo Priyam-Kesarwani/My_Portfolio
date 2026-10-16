@@ -234,6 +234,10 @@ export const projects = [
     ],
     github: "https://github.com/Priyam-Kesarwani/Finance-Flow",
     webapp: "https://finance-flow-by-star.vercel.app",
+    demoCredentials: {
+      email: "rohit@example.com",
+      password: "Rohit123",
+    },
   },
   {
     id: 2,
