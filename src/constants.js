@@ -105,14 +105,6 @@ export const SkillsInfo = [
       // { name: 'Figma', logo: figmaLogo },
     ],
   },
-  {
-    title: "Competitive Programming",
-    skills: [
-      { name: "CodeChef", logo: CodeChef },
-      { name: "LeetCode", logo: LeetCode },
-      { name: "Codeforces", logo: Codeforces },
-    ],
-  },
 ];
 
 export const codingProfiles = [
